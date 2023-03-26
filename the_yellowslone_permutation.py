@@ -7,14 +7,19 @@ import matplotlib.pyplot as plt
 def generate_the_yellowstone_permutation(n):
     sequence = [1, 2, 3]
     i = 4
+    smallestNotDoneYet = 4
     while len(sequence) < n:
         # no term is repeated
-        # always pick the smallest
         # gcd(a(n), a(n-1)) = 1
         # gcd(a(n), a(n-2)) > 1
-        if math.gcd(i, sequence[len(sequence) - 1]) == 1 and math.gcd(i, sequence[len(sequence) - 2]) > 1 and i not in sequence:
+        # always pick the smallest
+        if i not in sequence and math.gcd(i, sequence[len(sequence) - 1]) == 1 and math.gcd(i, sequence[len(sequence) - 2]) > 1:
             sequence.append(i)
-            i = 4
+            for j in range(4,i):
+                if j not in sequence:
+                    smallestNotDoneYet = j - 1
+                    break
+            i = smallestNotDoneYet
         i += 1
     return sequence
 
@@ -25,31 +30,27 @@ print(sequence)
 n = 10
 sequence = generate_the_yellowstone_permutation(n)
 df = pd.DataFrame(sequence, columns=["Number"])
-indices = [i for i in range(n)]
-df['index'] = indices
+df['index'] = [i for i in range(n)]
 sns.scatterplot(x="index", y='Number', data=df)
 plt.show()
 
 n = 100
 sequence = generate_the_yellowstone_permutation(n)
 df = pd.DataFrame(sequence, columns=["Number"])
-indices = [i for i in range(n)]
-df['index'] = indices
+df['index'] = [i for i in range(n)]
 sns.scatterplot(x="index", y='Number', data=df)
 plt.show()
 
 n = 1000
 sequence = generate_the_yellowstone_permutation(n)
 df = pd.DataFrame(sequence, columns=["Number"])
-indices = [i for i in range(n)]
-df['index'] = indices
+df['index'] = [i for i in range(n)]
 sns.scatterplot(x="index", y='Number', data=df)
 plt.show()
 
 n = 10000
 sequence = generate_the_yellowstone_permutation(n)
 df = pd.DataFrame(sequence, columns=["Number"])
-indices = [i for i in range(n)]
-df['index'] = indices
+df['index'] = [i for i in range(n)]
 sns.scatterplot(x="index", y='Number', data=df)
 plt.show()
