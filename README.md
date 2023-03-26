@@ -5,6 +5,8 @@ output: `[1, 2, 3, 4, 9, 8, 15, 14, 5, 6, 25, 12, 35, 16, 7, 10, 21, 20, 27, 22]
 
 # Plotting with Seaborn
 ## Basic Scatterplots
+Scatterplot of 10 numbers:
+![1000 numbers](10.png)
 Scatterplot of 100 numbers:
 ![1000 numbers](100.png)
 Scatterplot of 1000 numbers:

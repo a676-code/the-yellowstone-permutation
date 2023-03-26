@@ -22,7 +22,6 @@ sequence = generate_the_yellowstone_permutation(20)
 print(sequence)
 
 # Basic Scatterplots
-'''
 n = 10
 sequence = generate_the_yellowstone_permutation(n)
 df = pd.DataFrame(sequence, columns=["Number"])
@@ -46,7 +45,6 @@ indices = [i for i in range(n)]
 df['index'] = indices
 sns.scatterplot(x="index", y='Number', data=df)
 plt.show()
-'''
 
 n = 10000
 sequence = generate_the_yellowstone_permutation(n)
